@@ -1,4 +1,5 @@
-﻿export enum CardRank {
+﻿// #region CardData
+export enum CardRank {
     ACE = 1,
     TWO = 2,
     THREE = 3,
@@ -26,6 +27,9 @@ export enum CardColor {
     BLACK = 2
 }
 
+// #endregion
+
+// #region Building
 export enum BuildingDirections {
     ACENDING = 1,
     DECENDING = 2
@@ -40,6 +44,8 @@ export enum BuildingRules {
     ANY_SUIT = 5
 }
 
+// #endregion
+
 export enum GameTypes {
     KLONDIKE = 1,
     CANFIELD = 2,
@@ -53,11 +59,9 @@ export enum GameTypes {
     TERRACE = 10,
     SIR_TOMMY =11
 }
-
 export enum DeckCount {
     ONE = 1,
     TWO = 2,
     THREE = 3,
     FOUR = 4
 }
-
