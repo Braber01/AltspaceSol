@@ -30,19 +30,33 @@ export enum CardColor {
 // #endregion
 
 // #region Building
-export enum BuildingDirections {
-    ACENDING = 1,
-    DECENDING = 2
+export enum BuildRules {
+    NONE = 0, //0
+    ASCENDING = 1 << 0, //0b01 | 1
+    DECENDING = 1 << 1, //0b10 | 2
+    ALT_COLOR = 1 << 2, //0b100 | 4
+    SAME_COLOR = 1 << 3, //0b1000 | 8
+    SAME_SUIT = 1 << 4, //0b1_0000| 16
+    ANY_SUIT_BUT_SAME = 1 << 5, //0b10_0000 | 32
+    ANY_SUIT = 1 << 6, //0b100_0000 | 64
+    //alt color
+    ASC_ALT_COLOR = BuildRules.ASCENDING | BuildRules.ALT_COLOR,
+    DEC_ALT_COLOR = BuildRules.DECENDING | BuildRules.ALT_COLOR,
+    //same color
+    ASC_SAME_COLOR = BuildRules.ASCENDING | BuildRules.SAME_COLOR,
+    DEC_SAME_COLOR = BuildRules.DECENDING | BuildRules.SAME_COLOR,
+    //same suit
+    ASC_SAME_SUIT = BuildRules.ASCENDING | BuildRules.SAME_SUIT,
+    DEC_SAME_SUIT = BuildRules.DECENDING | BuildRules.SAME_SUIT,
+    //Any suit but same
+    ASC_ANY_SUIT_BUT_SAME = BuildRules.ASCENDING | BuildRules.ANY_SUIT_BUT_SAME,
+    DEC_ANY_SUIT_BUT_SAME = BuildRules.DECENDING | BuildRules.ANY_SUIT_BUT_SAME,
+    //Any Suit
+    ASC_ANY_SUIT = BuildRules.ASCENDING | BuildRules.ANY_SUIT,
+    DEC_ANY_SUIT = BuildRules.DECENDING | BuildRules.ANY_SUIT
 }
 
-export enum BuildingRules {
-    //TODO: add this enum on 10/5/2017
-    ALT_COLOR = 1,
-    SAME_COLOR = 2,
-    SAME_SUIT = 3,
-    ANY_SUIT_BUT_SAME = 4,
-    ANY_SUIT = 5
-}
+
 
 // #endregion
 
