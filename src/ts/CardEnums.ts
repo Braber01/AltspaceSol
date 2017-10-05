@@ -60,6 +60,11 @@ export enum BuildRules {
 
 // #endregion
 
+export enum DrawOptions {
+    DRAW_ONE = 1,
+    DRAW_THREE = 2
+}
+
 export enum GameTypes {
     KLONDIKE = 1,
     CANFIELD = 2,
@@ -73,6 +78,7 @@ export enum GameTypes {
     TERRACE = 10,
     SIR_TOMMY =11
 }
+
 export enum DeckCount {
     ONE = 1,
     TWO = 2,
