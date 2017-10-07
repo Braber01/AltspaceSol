@@ -24,12 +24,14 @@ THREE.AltOBJMTLLoader.prototype = {
         var cache = this.cache;
 
         function relativeToAbsolutePath(href) {
+
             var link = document.createElement("a");
             link.href = href;
             return (link.protocol + "//" + link.host + link.pathname + link.search + link.hash);
         }
 
         function loadInAltspace() {
+
             var options = {};
             options.__Type = "JSTypeLoadObj";
             options.Url = objUrl;
@@ -38,6 +40,7 @@ THREE.AltOBJMTLLoader.prototype = {
         }
 
         function innerOnLoad(object) {
+
             object.userData.src = objUrl;
             if (!cache.hasOwnProperty(objUrl)) {
                 cache[objUrl] = object;
@@ -48,7 +51,7 @@ THREE.AltOBJMTLLoader.prototype = {
         objUrl = relativeToAbsolutePath(objUrl);
 
         var mtlUrl = objUrl.slice(0, objUrl.length - 3) + 'mtl';
-
+        
         if (cache.hasOwnProperty(objUrl)) {
             innerOnLoad(cache[objUrl].clone());
         } else {
@@ -60,4 +63,3 @@ THREE.AltOBJMTLLoader.prototype = {
             loadInAltspace();
     },
 };
-
