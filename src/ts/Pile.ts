@@ -1,5 +1,5 @@
 ﻿import Card from "./Card";
-import { CardRank, CardSuit, CardColor, BuildingDirections, BuildingRules,GameTypes } from "./CardEnums";
+import { CardRank, CardSuit, CardColor,GameTypes } from "./CardEnums";
 import * as THREE from 'three';
 
 /**
