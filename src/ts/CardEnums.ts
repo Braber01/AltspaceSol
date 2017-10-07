@@ -16,10 +16,10 @@ export enum CardRank {
 }
 
 export enum CardSuit {
-    CLUBS = 1,
-    DIAMONDS = 2,
-    HEARTS = 3,
-    SPADES = 4
+    CLUBS = 0,
+    DIAMONDS = 1,
+    HEARTS = 2,
+    SPADES = 3
 }
 
 export enum CardColor {

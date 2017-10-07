@@ -50,6 +50,8 @@ export default class Card {
     public gameType: GameTypes;
     static fileNameArray: any[] = [2, 3, 4, 5, 6, 7, 8, 8, 9, 10, "jack", "queen", "king", "ace"];
     static texturePrefix: string = "assets/Cards/";
+    static suitArray: string[] = ["clubs", "diamonds", "hearts", "spades"];
+
     /**
      * Create a new card
      * @param {CardRank} rank
@@ -72,14 +74,18 @@ export default class Card {
     }
 
     fileName() {
-        return Card.texturePrefix + Card.fileNameArray[this.rank] + "_of_" + this.suit + ".png";
+        return Card.texturePrefix + Card.fileNameArray[this.rank] + "_of_" + Card.suitArray[this.suit] + ".png";
     }
 
     /**
      * TODO: setup thee.js elements
      * not sure of the types yet
      * */
-    setupThree(): any { }
+
+    //each card model is 600x726
+    setupThree(): any {
+
+    }
 
     isSelectable(): boolean {
         return this.revealed === true;
