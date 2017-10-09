@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r84/build/three.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.6.1/altspace.min.js"></script>
+    
+    <title>AltSolitareSpace</title>
+</head>
+<body>
+    <script>
+        var sim = new altspace.utilities.Simulation();
+        //mabye not a simulation I have no clue
+        var playingPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry = new THREE.PlaneGeometry(4200, 1452),
+            new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+        );
+        sime.scene.add(playingPlane);
+    </script>
+</body>
+</html>

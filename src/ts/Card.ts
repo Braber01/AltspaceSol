@@ -37,14 +37,14 @@ export default class Card {
      * Is this card Currently in a pile?
      * Set "from outside" when card is being moved
      * @type {boolean}
-     * */
+     */
     public isInPile: boolean = false;
 
     /**
      * Is this card currently in a foundation?
      * Set "from outside" when card is being moved.
      * @type {boolean}
-     * */
+     */
     public isInFoundation: boolean;
 
     public gameType: GameTypes;
@@ -57,9 +57,9 @@ export default class Card {
      * @param {CardRank} rank
      * @param {CardSuit} suit
      * @param {Function} selectCallback
-     * @param {GameTypes} gameType
-     * */
-    constructor(rank: CardRank, suit: CardSuit, selectCallback: Function,gameType = GameTypes.KLONDIKE) {
+     * @param {GameTypes=} gameType
+     */
+    constructor(rank: CardRank, suit: CardSuit, selectCallback: Function,gameType:GameTypes = GameTypes.KLONDIKE) {
         this.rank = rank;
         this.suit = suit;
         this.selectCallback = selectCallback;
@@ -68,21 +68,22 @@ export default class Card {
     /**
      * Get the color value of this card.
      * @returns {CardColor}
-     * */
+     */
     public color(): CardColor {
         return (this.suit === CardSuit.HEARTS || this.suit === CardSuit.DIAMONDS) ? CardColor.RED : CardColor.BLACK;
     }
 
-    fileName() {
+    fileName():string {
         return Card.texturePrefix + Card.fileNameArray[this.rank] + "_of_" + Card.suitArray[this.suit] + ".png";
     }
 
     /**
      * TODO: setup thee.js elements
      * not sure of the types yet
-     * */
+     *
+     */
 
-    //each card model is 600x726
+    // each card model is 600x726
     setupThree(): any {
 
     }
@@ -94,14 +95,15 @@ export default class Card {
     updateThree(): any { }
 
     acceptsSibling(card: Card): boolean {
-        if (this.gameType == GameTypes.KLONDIKE) {
+        // todo replace with switch(gameType)
+        if (this.gameType === GameTypes.KLONDIKE) {
             if (this.isInFoundation) {
                 return card.suit === this.suit && card.rank === (this.rank + 1);
             }
             if (this.isInPile) {
                 return card.color() !== this.color() && card.rank === (this.rank - 1);
             }
-            //TODO: Add Additonal Game Rules below
+            // todo Add Additonal Game Rules below
 
             return false;
         }

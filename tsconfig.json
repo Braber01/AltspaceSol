@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "noImplicitAny": true,
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "lib": [ "es6", "es2015.iterable", "dom" ],
+    "outDir": "./tsConfigOut"
+  },
+  "exclude": ["./tsConfigOut","./src/Examples"]
+}
